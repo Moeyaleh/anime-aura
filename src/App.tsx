@@ -1,34 +1,33 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import ImageUploader from "./components/ImageUploder";
+import { useImageUpload } from "./hooks/useImageUpload";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { image, uploadImage } = useImageUpload();
 
+  const handleUpload = (file: File) => {
+    uploadImage(file);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen min-w-5xl bg-black">
+      <header className="text-center mb-12">
+        <h1 className="text-5xl text-white">Anime Aura </h1>
+      </header>
+
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto space-y-6">
+        {/* Step 1: Upload */}
+        <ImageUploader onUpload={handleUpload} />
+
+        {/* Debug: Show if image uploaded */}
+        {image && (
+          <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+            <p className="text-white">
+              Image uploaded: {image.url.substring(0, 50)}...
+            </p>
+          </div>
+        )}
       </div>
-      <h1 className="text-red-500">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
