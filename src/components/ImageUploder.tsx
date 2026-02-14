@@ -5,8 +5,8 @@ interface ImageUploaderProps {
 }
 
 export default function ImageUploader({ onUpload }: ImageUploaderProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const file: File | undefined = e.target.files?.[0];
     if (file) {
       onUpload(file);
     }

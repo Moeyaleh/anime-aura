@@ -1,5 +1,5 @@
 export interface ImageData {
-  url: string;
+  readonly url: string;
 }
 
-export type Colors = string[];
+export type Colors = readonly string[];
