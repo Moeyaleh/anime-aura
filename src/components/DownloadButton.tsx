@@ -65,10 +65,10 @@ export default function DownloadButton({
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+    <div className="bg-white/10 backdrop-blur rounded-2xl p-4 md:p-8">
       <button
         onClick={downloadWallpaper}
-        className="w-full cursor-pointer text-white text-lg font-semibold py-4 rounded-xl transition-colors"
+        className="w-full cursor-pointer text-white text-base md:text-lg font-semibold py-3 md:py-4 rounded-xl transition-colors hover:bg-white/10 active:bg-white/20"
       >
         Download
       </button>

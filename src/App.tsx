@@ -34,12 +34,17 @@ function App(): JSX.Element {
   };
 
   return (
-    <div className="min-h-screen bg-black min-w-5xl pb-8">
-      <header className="text-center mb-12 pt-8">
-        <h1 className="text-5xl font-bold text-white">Anime Aura</h1>
+    <div
+      className="min-h-screen bg-black pb-6 md:pb-8 mx-auto"
+      style={{ minWidth: "1200px" }}
+    >
+      <header className="text-center mb-6 md:mb-12 pt-6 md:pt-8">
+        <h1 className="text-3xl md:text-5xl font-bold text-white">
+          Anime Aura
+        </h1>
       </header>
 
-      <div className="max-w-4xl mx-auto space-y-6 px-4">
+      <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 px-4 sm:px-6">
         <ImageUploader onUpload={handleUpload} />
 
         {error && (

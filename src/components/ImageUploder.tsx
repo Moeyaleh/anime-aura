@@ -13,12 +13,12 @@ export default function ImageUploader({ onUpload }: ImageUploaderProps) {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
-      <h2 className="text-2xl font-semibold text-white mb-4">
+    <div className="bg-white/10 backdrop-blur rounded-2xl p-4 md:p-8">
+      <h2 className="text-lg md:text-2xl font-semibold text-white mb-4">
         Upload Your Character
       </h2>
 
-      <div className="border-2  border-black rounded-xl p-12 text-center hover:border-white/50 transition-colors">
+      <div className="border-2 border-black rounded-xl p-6 md:p-12 text-center hover:border-white/50 transition-colors">
         <input
           type="file"
           accept="image/*"

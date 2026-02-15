@@ -14,19 +14,19 @@ export default function GradientPreview({
     colors.length > 0 ? `linear-gradient(45deg, ${colors.join(", ")})` : "gray";
 
   return (
-    <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
-      <h2 className="text-2xl font-semibold text-white mb-4">
+    <div className="bg-white/10 backdrop-blur rounded-2xl p-4 md:p-8">
+      <h2 className="text-lg md:text-2xl font-semibold text-white mb-4">
         background + image
       </h2>
 
       <div
-        className="w-full h-96 rounded-xl flex items-center justify-center overflow-hidden"
+        className="w-full h-64 md:h-96 rounded-xl flex items-center justify-center overflow-hidden"
         style={{ background: gradient }}
       >
         <img
           src={image.url}
           alt="Character"
-          className="max-h-80 object-contain"
+          className="max-h-60 md:max-h-80 object-contain"
         />
       </div>
     </div>
